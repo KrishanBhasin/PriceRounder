@@ -1,7 +1,6 @@
 walk(document.body);
 
-function walk(node) 
-{
+function walk(node) {
 	// I stole this function from here:
 	// http://is.gd/mwZp7E
 	
@@ -27,22 +26,21 @@ function walk(node)
 	}
 }
 
-function roundUpMoney(inputString, units){
+function roundUpMoney(inputString, units) {
     var unroundedVal = inputString.substring(1);
     var returnVal = Math.ceil(parseFloat(unroundedVal)).toString();
     return units + returnVal + ".00";
 }
 
-function roundUpMoneyPounds(inputString){
+function roundUpMoneyPounds(inputString) {
     return roundUpMoney(inputString, "£");
 }
 
-function roundUpMoneyDollars(inputString){
+function roundUpMoneyDollars(inputString) {
     return roundUpMoney(inputString, "$");
 }
 
-function handleText(textNode) 
-{
+function handleText(textNode) {
     var v = textNode.nodeValue;
 
     v = v.replace(/£[0-9]*\.99/g, roundUpMoneyPounds)
