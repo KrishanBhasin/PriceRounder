@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "PriceRounder",
-	"version": "1.0",
+	"version": "0.1",
 	"description": "This automatically rounds up from units of £x9, x.90, and x.99 to avoid cognitive biases that make us more likely to spend more",
 	"content_scripts": 
 	[
