@@ -33,13 +33,18 @@ function handleText(textNode)
 
     var re = /£[0-9]*\.99/g;
     
-    function roundUpMoney(str){
-        var returnVal = Math.ceil(parseFloat(str)).toString();
-        return returnVal;
+    function roundUpMoney(inputString, units){
+        var unroundedVal = inputString.substring(1);
+        var returnVal = Math.ceil(parseFloat(unroundedVal)).toString();
+        return units + returnVal;
+    }
+
+    function roundUpMoneyPounds(inputString){
+        return roundUpMoney(inputString, "£");
     }
     
 
-    v = v.replace(/[0-9]*\.99/g, roundUpMoney)
+    v = v.replace(/£[0-9]*\.99/g, roundUpMoneyPounds)
 
     
 	
